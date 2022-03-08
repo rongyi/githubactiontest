@@ -1,11 +1,7 @@
 package main
 
 import (
-	"encoding/hex"
 	"fmt"
-	"log"
-
-	"github.com/ontology-layer-2/go-ethereum/crypto"
 )
 
 func main() {
@@ -17,10 +13,10 @@ func main() {
 	fmt.Println("hello no indent")
 	fmt.Println("hello no indent")
 
-	pri, err := crypto.GenerateKey()
-	if err != nil {
-		log.Fatal(err)
-	}
-	b := crypto.FromECDSA(pri)
-	log.Printf("get privatekey: %s", hex.EncodeToString(b))
+	//pri, err := crypto.GenerateKey()
+	//if err != nil {
+		//log.Fatal(err)
+	//}
+	//b := crypto.FromECDSA(pri)
+	//log.Printf("get privatekey: %s", hex.EncodeToString(b))
 }
