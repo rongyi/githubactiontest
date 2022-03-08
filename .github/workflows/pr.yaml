@@ -1,0 +1,50 @@
+name: pr
+
+on:
+  pull_request:
+    branches:
+      - master
+
+
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+    # - name: Set up Go 1.13
+    #   uses: actions/setup-go@v1
+    #   with:
+    #     go-version: 1.13
+    #   id: go
+
+    # - name: Check out code into the Go module directory
+    #   uses: actions/checkout@v1
+
+    # - name: format code
+    #   run: |
+    #     echo "echo"
+    #     # gofmt -w .
+    #     # git config user.name "Automated Publisher"
+    #     # git config user.email "actions@users.noreply.github.com"
+    #     # git commit -a -m"Format code in action"
+    #     # Build ignored directories
+    #     # cat $GITHUB_EVENT_PATH
+
+    # - name: format code and add comment
+    #   # uses: sjkaliski/go-github-actions/fmt@v0.5.0
+    #   uses: rongyi/autogofmt@v2.3
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.13
+
+    - name: command
+      run: |
+        env
+        go build
